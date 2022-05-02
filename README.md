@@ -4,6 +4,8 @@ In my process of learning *React*, I decided to create a weather app
 
 ## Development Tools
 
+* Javasript
+* Sass
 * React
 * Axios
 
@@ -15,7 +17,9 @@ The weather data was retrieved from [Openweathermap]( http://openweathermap.org/
 Freely usable images were downloaded from [https://unsplash.com/](https://unsplash.com/)
 
 ## Current Progress
-- [ ] Basic UI prototype, separate into components
+- [ ] Basic UI prototype
+- [ ] Separate into react components
 - [ ] Call API to retrieve data
-- [ ] Create actions
+- [ ] Connect API's data to components using hooks
+- [ ] Create interactivity
 
