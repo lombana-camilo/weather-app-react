@@ -1,19 +1,24 @@
-import s from "./../styles/Card.module.scss"
+import s from "./../styles/Card.module.scss";
 
-const Card = ({city}) => {
+const Card = ({ city, onClose}) => {
+
   return (
     <div className={s.card}>
-      <div>
-        <h1>{city.temp}</h1>
+         <button onClick={(e)=> onClose(city.id)}>x</button>
+      <div className={s.temp}>
+        <h1>{city.temp}°C</h1>
         <p>
-          Min: {city.min} Max: {city.max}
+          Min: {city.min}° Max: {city.max}°
         </p>
-        <p>Feels like: {city.feelsLike}</p>
+        <p>Feels like: {city.feelsLike}°</p>
       </div>
-      <div>
-        <img src="" alt="" />
-        <h3>{city.name}</h3>
-        <h4>{city.description}</h4>
+      <hr />
+      <div className={s.description}>
+        <div>
+          <h3>{city.name}</h3>
+          <h4>{city.description}</h4>
+        </div>
+        <img src={city.icon} alt="" />
       </div>
     </div>
   );

@@ -17,9 +17,9 @@ The weather data was retrieved from [Openweathermap]( http://openweathermap.org/
 Freely usable images were downloaded from [https://unsplash.com/](https://unsplash.com/)
 
 ## Current Progress
-- [ ] Basic UI prototype
-- [ ] Separate into react components
-- [ ] Call API to retrieve data
-- [ ] Connect API's data to components using hooks
+- [x] Basic UI prototype
+- [x] Separate into react components
+- [x] Call API to retrieve data
+- [x] Connect API's data to components using hooks
 - [ ] Create interactivity
 
