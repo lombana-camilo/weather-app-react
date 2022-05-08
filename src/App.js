@@ -1,21 +1,24 @@
 import { useState } from "react";
 import "./App.scss";
-import SearchBar from "./components/SearchBar";
-import CurrentData from "./components/CurrentData";
+import NavBar from "./components/NavBar";
 import Forecast from "./components/Forecast";
-import Card from "./components/Card";
 import Cards from "./components/Cards";
 import Error from "./components/Error";
+import Footer from "./components/Footer";
 import useWeatherApi from "./apiHook/useWeatherApi";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
-  const { isError, setError, isLoading, currData, submitRequest } =
+  const { isError, setError, isLoading, submitRequest, currData } =
     useWeatherApi();
   const [cities, setCities] = useState([]);
+  const [currCity, setCurrCity] = useState([]);
 
   const onSubmit = async (location) => {
     try {
       const cityData = await submitRequest(location);
+      //avoid duplicates
+      if (cities.some((c) => c.id === cityData.id)) return;
       setCities((oldCities) => [...oldCities, cityData]);
       setError("");
     } catch (error) {
@@ -28,15 +31,16 @@ const App = () => {
   };
 
   return (
-    <div>
-         <div>
-            <SearchBar submitRequest={onSubmit} />
-            {isError && <Error message={isError} />}
-         </div>
-      {currData && <Cards cities={cities} onClose={onClose} />}
-      {/* <CurrentData/> */}
-      {/* <Forecast/> */}
-    </div>
+    <BrowserRouter>
+      <NavBar submitRequest={onSubmit} />
+      {isError && <Error message={isError} />}
+      <Routes>
+        {/* {currData && <Cards cities={cities} onClose={onClose} />} */}
+        <Route path="/" element={<Cards cities={cities} onClose={onClose} />} />
+        <Route path="/city/:id" element={<Forecast cities={cities} />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 };
 

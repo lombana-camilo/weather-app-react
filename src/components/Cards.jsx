@@ -13,7 +13,7 @@ const Cards = ({ cities, onClose}) => {
          }}>
             {cities.map((c) => (
                <SplideSlide key={c.id}>
-                  <Card city={c} onClose={onClose}/>
+                  <Card city={c} onClose={onClose} id={c.id}/>
                </SplideSlide>
             ))}
          </Splide>

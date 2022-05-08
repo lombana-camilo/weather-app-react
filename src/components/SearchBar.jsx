@@ -8,6 +8,7 @@ const SearchBar = ({ submitRequest }) => {
     e.preventDefault();
     if (!location) return;
     submitRequest(location);
+      setLocation("")
   };
 
   const onChange = (e) => setLocation(e.target.value);
@@ -15,7 +16,7 @@ const SearchBar = ({ submitRequest }) => {
   return (
       <div className={s.searchBar}>
          <form onSubmit={onSubmit}>
-            <input type="text" placeholder="Type Location..." onChange={onChange} />
+            <input type="text" placeholder="Type City Name..." onChange={onChange} value={location} />
             <button>Search</button>
          </form>
       </div>
