@@ -1,15 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+$bgColor: #1a2639;
+$primaryColor: #c24d2c;
+$secondaryColor: #3e4a61;
+$lightColor: #d9dad7;
+$alertColor: #2bc0e6;
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 23px;
+  color: $lightColor;
   max-width: 100vw;
   min-height: 100vh;
-  background-image: url("./assets/background.png");
-  background-position: center;
-  background-size: cover;
-  // background-repeat: no-repeat;
-  // overflow: hidden;
+  background-image: radial-gradient(
+    ellipse at center,
+    $bgColor 60%,
+    rgba(0, 0, 0, 1) 130%
+  );
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 @mixin position($top, $right, $bottom, $left) {
@@ -18,13 +34,4 @@ body {
   bottom: $bottom;
   left: $left;
   margin: auto;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }

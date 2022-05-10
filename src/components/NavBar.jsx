@@ -1,6 +1,6 @@
 import SearchBar from "./SearchBar";
 import s from "./../styles/NavBar.module.scss"
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 const NavBar = ({submitRequest}) => {
   return (
@@ -8,7 +8,10 @@ const NavBar = ({submitRequest}) => {
          <Link to="/">
             <h1>Weather Cards</h1>
          </Link>
-      <SearchBar submitRequest={submitRequest}/>
+         <Routes>
+            <Route path="/" element={ <SearchBar submitRequest={submitRequest}/> }/>
+            <Route path="/*" element={ <h2> Hourly Forecast</h2> }/>
+         </Routes>
     </div>
   );
 };

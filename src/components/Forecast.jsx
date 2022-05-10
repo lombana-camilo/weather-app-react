@@ -28,7 +28,6 @@ const Forecast = ({ cities }) => {
   return (
     <div>
       <div className={s.current}>
-        <h2>Hourly Forecast</h2>
         <h2>Currently in {city.name}:</h2>
         <h1>{city.temp}°C</h1>
       </div>

@@ -3,7 +3,7 @@
 .searchBar {
   display: flex;
   justify-content: center;
-  background-image: -webkit-linear-gradient(-45deg, #cfcccc 40%, #000 50%);
+  background-image: -webkit-linear-gradient(-45deg, $lightColor 20%, $secondaryColor 80%);
   opacity: 0.5;
   height: 50px;
   width: 50vw;
@@ -24,7 +24,7 @@
   button {
     width: 20%;
     background: none;
-    color: #fff;
+    color: $lightColor;
     border: none;
     font-weight: 600;
     cursor: pointer;
