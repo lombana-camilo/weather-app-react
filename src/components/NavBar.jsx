@@ -10,7 +10,7 @@ const NavBar = ({submitRequest}) => {
          </Link>
          <Routes>
             <Route path="/" element={ <SearchBar submitRequest={submitRequest}/> }/>
-            <Route path="/*" element={ <h2> Hourly Forecast</h2> }/>
+            <Route path="*" element={ <h2> Hourly Forecast</h2> }/>
          </Routes>
     </div>
   );

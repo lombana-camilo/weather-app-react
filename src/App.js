@@ -36,7 +36,7 @@ const App = () => {
       {isError && <Error message={isError} />}
       <Routes>
         {/* {currData && <Cards cities={cities} onClose={onClose} />} */}
-        <Route path="/" element={<Cards cities={cities} onClose={onClose} />} />
+        <Route path="/*" element={<Cards cities={cities} onClose={onClose} />} />
         <Route path="/city/:id" element={<Forecast cities={cities} />} />
       </Routes>
       <Footer />
